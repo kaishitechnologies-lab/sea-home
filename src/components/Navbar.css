@@ -1,0 +1,244 @@
+/* Base Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #eef0f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+  background: #0a5c9e;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar__brand strong {
+  font-size: 20px;
+  color: #0b2d5c;
+  font-weight: 700;
+}
+
+.navbar__brand small {
+  font-size: 9px;
+  color: #0a5c9e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f4f7fb;
+  padding: 4px;
+  border-radius: 99px;
+}
+
+.navbar__link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 99px;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #0a5c9e;
+  background: #e5edf5;
+}
+
+.navbar__link.active {
+  background: #0a5c9e;
+  color: #ffffff;
+}
+
+.dropdown-icon {
+  margin-top: 2px;
+}
+
+/* Right Side Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Toggle Groups (Currency & Language) */
+.navbar__toggle-group {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 99px;
+  padding: 2px;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 6px 12px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.toggle-btn.text-btn {
+  padding: 6px 8px;
+}
+
+.toggle-divider {
+  color: #d1d5db;
+  font-size: 12px;
+  margin: 0 2px;
+}
+
+/* Logout Button */
+.navbar__logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0a3d68;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.navbar__logout-btn:hover {
+  background: #072c4d;
+}
+
+/* Mobile Toggle */
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #0a3d91;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1200px) {
+  .navbar__links {
+    gap: 0;
+  }
+  .navbar__link {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar__toggle {
+    display: block;
+    order: 3;
+  }
+
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: #ffffff;
+    border-radius: 0;
+    padding: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #eef0f4;
+  }
+
+  .navbar__links.is-open {
+    display: flex;
+  }
+
+  .navbar__link {
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .navbar__actions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid #eef0f4;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjust position based on whether links are open */
+  .navbar__links.is-open + .navbar__actions {
+    top: calc(100% + 250px); /* Approximate height of links menu */
+  }
+
+  .navbar__actions.is-open {
+    display: flex;
+  }
+
+  .navbar__toggle-group {
+    justify-content: center;
+    width: 100%;
+    padding: 4px;
+  }
+  
+  .navbar__logout-btn {
+    justify-content: center;
+  }
+}
