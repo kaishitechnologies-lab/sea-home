@@ -1,5 +1,10 @@
-import { ShieldCheck, Scale, Lock, MessageCircle, Headphones } from "lucide-react";
-import "./WhyChoose.css";
+import {
+  ShieldCheck,
+  Scale,
+  Lock,
+  MessageCircle,
+  Headphones,
+} from "lucide-react";
 
 const items = [
   {
@@ -28,7 +33,9 @@ export default function WhyChoose() {
   return (
     <section className="why">
       <span className="why__kicker">Why Choose</span>
-      <h2>SeaHomeLands for Foreigners?</h2>
+      <h2>SeaHome Lands for Foreigners?</h2>
+      
+      {/* SVG wave from Figma */}
       <svg className="why__wave" width="48" height="6" viewBox="0 0 48 6" fill="none">
         <path
           d="M1 3c4-3 7 3 11 0s7 3 11 0 7 3 11 0 7 3 11 0"
@@ -37,6 +44,7 @@ export default function WhyChoose() {
           strokeLinecap="round"
         />
       </svg>
+
       <p className="why__lead">
         Renting in a new country can feel intimidating. We streamline every step
         with transparent bilingual contracts, verified properties, and escrow
@@ -47,7 +55,8 @@ export default function WhyChoose() {
         {items.map(({ icon: Icon, title, text }) => (
           <div className="why__item" key={title}>
             <span className="why__icon">
-              <Icon size={16} />
+              {/* Reduced icon size to 18 to match Figma proportions */}
+              <Icon size={18} />
             </span>
             <div>
               <strong>{title}</strong>
@@ -58,7 +67,8 @@ export default function WhyChoose() {
       </div>
 
       <div className="why__deco">
-        <Headphones size={54} />
+        {/* The large headphones icon in the corner */}
+        <Headphones size={64} strokeWidth={1.5} />
       </div>
     </section>
   );

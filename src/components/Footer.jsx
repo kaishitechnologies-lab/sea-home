@@ -1,92 +1,65 @@
 import { Link } from "react-router-dom";
-import { Share2, Camera, Briefcase, Play, Globe } from "lucide-react";
+import { MapPin, Building2 } from "lucide-react";
 import "./Footer.css";
 
 const columns = [
   {
-    title: "Company",
+    title: "PROPERTIES",
     links: [
-      { label: "About SeaHome", to: "/why-us" },
-      { label: "Our Legal Team", to: "/why-us" },
-      { label: "Foreign Ownership Law", to: "/faq" },
-      { label: "Careers & Partners", to: "/contact" },
-      { label: "Press & Media", to: "/contact" },
+      { label: "Colombo Condominiums", to: "/properties" },
+      { label: "Galle Beachfront Villas", to: "/properties" },
+      { label: "Kandy Hill Country Houses", to: "/properties" },
+      { label: "Nomad Surf Bungalows", to: "/properties" },
+      { label: "Commercial & Coworking", to: "/properties" },
     ],
   },
   {
-    title: "Properties",
+    title: "EXPAT GUIDES",
     links: [
-      { label: "Beachfront Villas", to: "/properties" },
-      { label: "Colombo Luxury Condos", to: "/properties" },
-      { label: "Tea Estate Bungalows", to: "/properties" },
-      { label: "Development Land", to: "/properties" },
-      { label: "Commercial Leases", to: "/properties" },
-    ],
-  },
-  {
-    title: "Locations",
-    links: [
-      { label: "Galle & South Coast", to: "/locations" },
-      { label: "Colombo & Greater West", to: "/locations" },
-      { label: "Kandy & Central Hills", to: "/locations" },
-      { label: "Ahangama & Weligama", to: "/locations" },
-      { label: "Trincomalee & East", to: "/locations" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Buyer Guarantee", to: "/faq" },
-      { label: "Foreign Remittance FAQ", to: "/faq" },
-      { label: "Title Due Diligence", to: "/faq" },
-      { label: "Tokyo Advisory Desk", to: "/contact" },
-      { label: "Contact Consular Support", to: "/contact" },
+      { label: "Sri Lanka Foreign Lease Law", to: "/faq" },
+      { label: "Digital Nomad Visa Guide", to: "/faq" },
+      { label: "Escrow Deposit System", to: "/faq" },
+      { label: "Banking & Remittances", to: "/faq" },
+      { label: "Tokyo Desk Japanese FAQ", to: "/faq" },
     ],
   },
 ];
-
-const socials = [Share2, Camera, Briefcase, Play];
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
+        {/* Brand Column */}
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M15 4 7 12l8 8"
-                stroke="#0a3d91"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M20 8l-6 4 6 4"
-                stroke="#f26b1d"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span>SeaHome Lands</span>
+            <div className="footer__logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div className="footer__brand-text">
+              <strong>SeaHome Lands</strong>
+              <small>SRI LANKA REAL ESTATE</small>
+            </div>
           </Link>
           <p>
-            Global Real Estate Agency for Foreigners. Premium beach villas, tea
-            country retreats, and urban investments across paradise.
+            Sri Lanka's dedicated relocation and real estate agency for
+            foreigners, expats, and digital nomads. Secure leases, verified
+            deeds, and bilingual contracts.
           </p>
-          <span className="footer__region">
-            <Globe size={11} /> Sri Lanka | Japan
-          </span>
-          <div className="footer__social">
-            {socials.map((Icon, i) => (
-              <a href="#" key={i} aria-label="social link">
-                <Icon size={12} />
-              </a>
-            ))}
+          <div className="footer__locations">
+            <span>
+              <MapPin size={14} /> Colombo 03, Sri Lanka
+            </span>
+            <span className="dot">•</span>
+            <span>
+              <Building2 size={14} /> Shibuya, Tokyo, Japan
+            </span>
           </div>
         </div>
 
+        {/* Link Columns */}
         {columns.map((col) => (
           <div className="footer__col" key={col.title}>
             <h4>{col.title}</h4>
@@ -99,14 +72,29 @@ export default function Footer() {
             </ul>
           </div>
         ))}
+
+        {/* Newsletter Column */}
+        <div className="footer__newsletter">
+          <h4>STAY UPDATED</h4>
+          <p>
+            Receive vetted new listings and Sri Lankan market reports.
+          </p>
+          <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Your email..." required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
       </div>
 
+      {/* Bottom Bar */}
       <div className="footer__bottom">
-        <span>© 2026 kaishi innovations. All rights reserved.</span>
-        <div>
+        <span>
+          © 2026 Kaishi innovation. All rights reserved. Registered real estate license SL-RE-4921.
+        </span>
+        <div className="footer__bottom-links">
           <Link to="/contact">Privacy Policy</Link>
-          <Link to="/contact">Terms of Service</Link>
-          <Link to="/contact">Investor Compliance</Link>
+          <Link to="/contact">Terms of Escrow</Link>
+          <Link to="/contact">Legal Due Diligence</Link>
         </div>
       </div>
     </footer>

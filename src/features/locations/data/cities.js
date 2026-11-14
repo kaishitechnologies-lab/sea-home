@@ -4,7 +4,7 @@ export const featured = {
   note: "Recommended for Long-Stay Nomads & Families",
   badge: "TOP EXPAT PICK ★ 4.9",
   verified: "48 Verified Homes",
-  image: "/images/galle.jpg",
+  image: "/all.jpg", // <-- Updated to use your new image
   places: "Galle Fort, Unawatuna, Weligama & Ahangama",
   caption: "The Epicenter of Ocean Living & Creative Expat Life",
   heading: "Fastest Growing Foreign Community",
@@ -32,7 +32,7 @@ export const cities = [
     name: "Colombo Metropolitan",
     price: "From LKR 120,000",
     rentals: "68 Rentals",
-    image: "/images/colombo.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "Diplomatic enclaves, international schools, rooftop infinity pools, and premier private hospitals within minutes.",
     features: [
       "International Schools & Embassies",
@@ -48,7 +48,7 @@ export const cities = [
     name: "Kandy & Cultural Hills",
     price: "From LKR 95,000",
     rentals: "28 Rentals",
-    image: "/images/kandy.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "Lush mountain views, cool temperate mountain air, colonial tea heritage bungalows, and spiritual tranquility.",
     features: [
       "Crisp Cool Climate (20°C - 24°C)",
@@ -64,7 +64,7 @@ export const cities = [
     name: "Mount Lavinia",
     price: "From LKR 130,000",
     rentals: "34 Rentals",
-    image: "/images/lavinia.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "The premier seaside suburb of Colombo. Golden sand promenades, famous seafood restaurants, and rail connectivity.",
     features: [
       "20-min Coastal Commute to Central Colombo",
@@ -80,7 +80,7 @@ export const cities = [
     name: "Negombo Lagoon & Beach",
     price: "From LKR 110,000",
     rentals: "25 Rentals",
-    image: "/images/negombo.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "Minutes away from Bandaranaike International Airport with tranquil Dutch canals, watersports, and expat villas.",
     features: [
       "15-min to BIA International Airport",
@@ -96,7 +96,7 @@ export const cities = [
     name: "Mirissa & Weligama Bay",
     price: "From LKR 140,000",
     rentals: "39 Rentals",
-    image: "/images/mirissa.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "The premier destination for remote founders, surfers, and creatives. Packed with vibrant cafes and coworking spaces.",
     features: [
       "Year-round Surfing & Ocean Sports",
@@ -112,7 +112,7 @@ export const cities = [
     name: "Ella & Nuwara Eliya",
     price: "From LKR 105,000",
     rentals: "19 Rentals",
-    image: "/images/ella.jpg",
+    image: "/all.jpg", // <-- Updated
     desc: "Dramatic valleys, endless Ceylon tea carpets, world-famous rail journeys, and quiet European-style stone cottages.",
     features: [
       "Scenic Trails & Mountain Waterfalls",
