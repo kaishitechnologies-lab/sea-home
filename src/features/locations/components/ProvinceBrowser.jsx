@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Map as MapIcon, MapPin, Waves, Mountain, Sun, Maximize2 } from "lucide-react";
+import {
+  Map as MapIcon,
+  MapPin,
+  Waves,
+  Mountain,
+  Sun,
+  Maximize2,
+} from "lucide-react";
 import { provinces } from "../data/provinces";
-import "./ProvinceBrowser.css";
 
 const icons = {
   pin: MapPin,
@@ -64,12 +70,7 @@ export default function ProvinceBrowser() {
           })}
         </div>
 
-        <a
-          className="prov__full"
-          href={fullUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="prov__full" href={fullUrl} target="_blank" rel="noreferrer">
           <Maximize2 size={13} /> Open Interactive Fullscreen Map
         </a>
       </div>

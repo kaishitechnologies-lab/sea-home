@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare, SearchCheck } from "lucide-react";
-import "./RelocationBanner.css";
 
 export default function RelocationBanner() {
   return (
