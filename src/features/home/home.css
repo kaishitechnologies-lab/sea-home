@@ -96,7 +96,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 100px 20px 80px;
-  background: #0b5d7a url("/main.jpeg") center / cover no-repeat;
+  background: #0b5d7a url("/front.jpeg") center / cover no-repeat;
 }
 .home-page .hero::before {
   content: "";
