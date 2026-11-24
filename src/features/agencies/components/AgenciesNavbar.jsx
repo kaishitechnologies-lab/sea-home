@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Home, ChevronDown } from "lucide-react";
 
-const links = ["Home", "Rentals", "Buy", "Invest", "Countries", "Agencies", "Locations", "About Us"];
+const links = ["Home", "Rentals", "Buy", "Invest", "Countries", "Agencies", "Locations"];
 
 export default function AgenciesNavbar() {
   const [currency, setCurrency] = useState("USD");

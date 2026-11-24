@@ -3,10 +3,9 @@ import {
   Ruler, Building2, BedDouble, Mountain, Landmark, Trees, Mail, Lock, ArrowRight,
 } from "lucide-react";
 
-const IMAGES = ["/buy-property.jpeg", "/images%20(2).jpeg"];
-
 const DATA = [
   {
+    img: "/invest.01.avif",
     b1: "COASTAL DEVELOPMENT", b2: "BOI SECTION 17",
     Over: Ruler, over: "3.8 Acres (608 Perches)",
     loc: "Mirissa South, Southern Province",
@@ -17,6 +16,7 @@ const DATA = [
     btn1: "Memo (PDF)", btn2: "Due Diligence",
   },
   {
+    img: "/invest.02.webp",
     b1: "COMMERCIAL FREEHOLD", b2: "PORT CITY SEZ",
     Over: Building2, over: "5,400 sq.ft Floorplate",
     loc: "Port City SEZ, Colombo 01",
@@ -27,6 +27,7 @@ const DATA = [
     btn1: "Prospectus", btn2: "Legal Counsel",
   },
   {
+    img: "/invest.03.jpeg",
     b1: "TURNKEY HOSPITALITY", b2: "CASH-FLOWING",
     Over: BedDouble, over: "12 Designer Suites",
     loc: "Ahangama Surf Strip, Galle Coast",
@@ -37,6 +38,7 @@ const DATA = [
     btn1: "Audited P&L", btn2: "Tokyo Video Tour",
   },
   {
+    img: "/invest.04.jpg",
     b1: "AGRI & ECO-TOURISM", b2: "EXPORT CROP",
     Over: Mountain, over: "22 Acres Operational",
     loc: "Pedro Valley, Central Highlands",
@@ -47,6 +49,7 @@ const DATA = [
     btn1: "Crop Dossier", btn2: "Inquire Desk", Btn2Icon: Mail,
   },
   {
+    img: "/invest.05.jpeg",
     b1: "UNESCO HERITAGE", b2: "TRIPLE NET LEASE",
     Over: Landmark, over: "Rare Freehold Fort Deed",
     loc: "Galle Fort World Heritage Site",
@@ -57,6 +60,7 @@ const DATA = [
     btn1: "Leases", btn2: "Private Showing", Btn2Icon: Lock,
   },
   {
+    img: "/invest.06.jpeg",
     b1: "CLIFFTOP & BEACH", b2: "SUB-DIVISION READY",
     Over: Trees, over: "2.5 Acres (400 Perches)",
     loc: "Seenimodera Bay, Tangalle Coast",
@@ -69,12 +73,15 @@ const DATA = [
 ];
 
 function Card({ d }) {
-  const [i, setI] = useState(0);
   const { Over, Btn2Icon } = d;
   return (
     <article className="inv-card">
       <div className="inv-card-img">
-        <img src={IMAGES[i]} alt="" onError={() => i < IMAGES.length - 1 && setI(i + 1)} />
+        <img
+          src={d.img}
+          alt={d.title}
+          onError={(e) => { e.currentTarget.src = "/buy-property.jpeg"; }}
+        />
         <div className="inv-badges">
           <span className="dark">{d.b1}</span>
           <span className="light">{d.b2}</span>

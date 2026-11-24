@@ -1,0 +1,478 @@
+/* Global reset for this page to ensure proper sizing */
+.auth-page-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  position: relative; /* Added for the absolute back button */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #dbeafe; /* Fallback */
+  /* Replace with your exact background image path or a similar Unsplash one */background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('./front.jpeg');
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll; /* Changed to scroll as requested previously */
+  box-sizing: border-box;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0A2540;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(-4px);
+}
+
+/* The main frosted glass card */
+.auth-card {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  background: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
+  backdrop-filter: blur(24px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+/* ================================
+   LEFT SIDE - INFO PANEL
+   ================================ */
+.auth-left-panel {
+  flex: 1.1;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 3rem;
+}
+
+.brand-logo-box {
+  width: 48px;
+  height: 48px;
+  background: #0A2540;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0A2540;
+  margin: 0;
+}
+
+.brand-sub {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 2px 0 0 0;
+}
+
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0A2540;
+  line-height: 1.15;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: auto; /* Pushes the hotline to the bottom */
+}
+
+.feature-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.feature-icon {
+  color: #0A2540;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0A2540;
+  margin: 0 0 4px 0;
+}
+
+.feature-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.hotline-box {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hotline-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0A2540;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+}
+
+.hotline-numbers {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  color: #0A2540;
+  font-weight: 500;
+  align-items: center;
+}
+
+/* ================================
+   RIGHT SIDE - FORM PANEL
+   ================================ */
+.auth-right-panel {
+  flex: 1;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.auth-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #1a56db; /* The exact blue from the screenshot */
+  letter-spacing: 0.05em;
+}
+
+.lang-switch {
+  display: flex;
+  background: #e5e7eb;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.lang-btn {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #6b7280;
+  border: none;
+  background: transparent;
+}
+
+.lang-btn.active {
+  background: #0A2540;
+  color: white;
+}
+
+.form-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0A2540;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.02em;
+}
+
+/* Role Tabs */
+.role-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.role-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.role-tab.active {
+  background: white;
+  color: #0A2540;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  border-color: rgba(255,255,255,0.8);
+}
+
+/* Info Alert */
+.info-banner {
+  display: flex;
+  gap: 12px;
+  background: rgba(239, 246, 255, 0.7);
+  border: 1px solid rgba(191, 219, 254, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: #1e40af;
+  line-height: 1.4;
+  align-items: flex-start;
+}
+
+/* Form Inputs */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0A2540;
+}
+
+.forgot-link {
+  font-size: 0.8rem;
+  color: #1a56db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px; /* Space for icon */
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 0.95rem;
+  color: #0A2540;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-input:focus {
+  border-color: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Checkbox Row */
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.fido-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1a56db;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Primary Button */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: #0A2540;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.btn-submit:hover {
+  background: #1e3a5f;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.divider span {
+  background: #f8fafc; /* Match background */
+  padding: 0 12px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+}
+
+/* Secondary Buttons */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 12px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0A2540;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #f9fafb;
+}
+
+/* Footer text */
+.signup-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.signup-link {
+  color: #1a56db;
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
