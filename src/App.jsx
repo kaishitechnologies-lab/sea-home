@@ -39,7 +39,7 @@ export default function App() {
           {/* Add the Auth Route */}
           <Route path="/auth" element={<AuthPage />} />
 
-          <Route path="*" element={<Page title="404 - Page not found" />} />
+          {/* <Route path="*" element={<Page title="404 - Page not found" />} /> */}
         </Routes>
       </main>
 

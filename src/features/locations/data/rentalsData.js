@@ -1,6 +1,6 @@
-// src/features/rentals/data/rentalsData.js
+// C:\sea-home\src\features\locations\data\rentalsData.js
 
-export const rentalsData = [
+const baseListings = [
   {
     id: 1,
     image:
@@ -248,5 +248,86 @@ export const rentalsData = [
     liked: false,
   },
 ];
+
+// Extra mock listings (ids 13 to 36) so pagination has more pages
+const extraLocations = [
+  "Galle Fort, Sri Lanka",
+  "Colombo 05, Sri Lanka",
+  "Mount Lavinia, Sri Lanka",
+  "Kandy Hills, Sri Lanka",
+  "Bentota, Sri Lanka",
+  "Weligama, Sri Lanka",
+  "Negombo, Sri Lanka",
+  "Nuwara Eliya, Sri Lanka",
+  "Arugam Bay, Sri Lanka",
+  "Trincomalee, Sri Lanka",
+  "Ahangama, Sri Lanka",
+  "Kalutara, Sri Lanka",
+];
+
+const extraTitles = [
+  ["Lagoon Edge Bungalow", "Peaceful lagoon-side bungalow with a shaded verandah, fruit garden, and easy access to the water."],
+  ["Hillside Tea Estate Home", "Quiet family house surrounded by tea fields, with a wide terrace and cool mountain air year-round."],
+  ["Coastal Studio Loft", "Bright open-plan loft a short walk from the beach, ideal for short stays or a compact holiday base."],
+  ["Garden Courtyard Villa", "Traditional villa built around a central courtyard, with a plunge pool and shaded dining area."],
+  ["Surf View Apartment", "Modern apartment with balcony views of the waves, rooftop access, and secure parking."],
+  ["Heritage Stone House", "Restored stone house with original timber beams, a private garden, and a fireplace in the main room."],
+  ["Cliffside Retreat", "Secluded retreat on the cliffs with ocean breezes, an outdoor shower, and a glass-walled lounge."],
+  ["Urban Family Townhouse", "Three-level townhouse in a quiet residential street, with a rooftop terrace and a two-car garage."],
+];
+
+const extraImages = [
+  "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+];
+
+const availability = [
+  "Available now",
+  "Available Dec 1",
+  "Available Jan 15",
+  "Available Feb 1",
+];
+
+const extraListings = Array.from({ length: 24 }, (_, k) => {
+  const id = k + 13;
+  const [title, description] = extraTitles[k % extraTitles.length];
+  const price = 300 + ((k * 137) % 1200);
+  const beds = 1 + (k % 5);
+  const baths = Math.max(1, beds - 1);
+
+  const badges =
+    k % 3 === 0
+      ? [{ label: "New", tone: "light" }]
+      : k % 3 === 1
+      ? [{ label: "Verified", tone: "dark" }]
+      : [{ label: "Featured", tone: "dark" }];
+
+  return {
+    id,
+    image: extraImages[k % extraImages.length],
+    badges,
+    location: extraLocations[k % extraLocations.length],
+    title,
+    description,
+    beds,
+    baths,
+    area: `${(600 + beds * 380).toLocaleString()} sqft`,
+    price,
+    lkr: `LKR ${(price * 300).toLocaleString()}`,
+    tag: k % 2 === 0 ? "Monthly lease" : "Short term",
+    rating: Number((4.5 + (k % 6) * 0.1).toFixed(1)),
+    reviews: 40 + ((k * 17) % 180),
+    available: availability[k % availability.length],
+    liked: false,
+  };
+});
+
+export const rentalsData = [...baseListings, ...extraListings];
 
 export default rentalsData;

@@ -107,14 +107,14 @@ export default function Navbar() {
             </div>
 
             {/* Language Toggle */}
-            <div className="navbar__toggle-group lang-group">
+            {/* <div className="navbar__toggle-group lang-group">
               <button className="toggle-btn active">EN</button>
               <span className="toggle-divider">|</span>
               <button className="toggle-btn text-btn">日本語</button>
-            </div>
+            </div> */}
 
             {/* COUNTRY DROPDOWN */}
-            <div className="navbar__country-dropdown-wrapper" ref={dropdownRef}>
+            {/* <div className="navbar__country-dropdown-wrapper" ref={dropdownRef}>
               <button
                 type="button"
                 className="navbar__country-trigger"
@@ -161,7 +161,7 @@ export default function Navbar() {
                   ))}
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Logout Button */}
             <button className="navbar__logout-btn" onClick={handleAuthClick}>

@@ -113,3 +113,64 @@ export const agencies = [
     cta: "View 45 Listings",
   },
 ];
+
+const mockNames = [
+  "Hill Country Land Registry Partners",
+  "Jaffna Northern Properties Group",
+  "Trincomalee Bay Coastal Estates",
+  "Batticaloa Eastshore Realty",
+  "Anuradhapura Heritage Lands",
+  "Kurunegala Central Corridor Realty",
+  "Matara Southern Ridge Brokers",
+  "Kalutara Palm Coast Partners",
+  "Ratnapura Gem Belt Land Company",
+  "Puttalam Coastal Ventures",
+  "Chilaw West Shore Estates",
+  "Hambantota Port Logistics Realty",
+];
+
+const locations = [
+  "Nuwara Eliya & Badulla",
+  "Jaffna Town & Nallur",
+  "Trincomalee & Nilaveli",
+  "Batticaloa & Pasikuda",
+  "Anuradhapura & Mihintale",
+  "Kurunegala & Dambulla",
+  "Matara & Dikwella",
+  "Kalutara & Bentota",
+  "Ratnapura & Embilipitiya",
+  "Puttalam & Kalpitiya",
+  "Chilaw & Marawila",
+  "Hambantota & Tangalle",
+];
+
+export const generatedAgencies = Array.from({ length: 12 }, (_, i) => ({
+  id: 100 + i,
+  tag:
+    i % 3 === 0
+      ? "REGIONAL GROWTH PARTNER"
+      : i % 3 === 1
+      ? "HERITAGE & AGRO DESK"
+      : "COASTAL RESIDENTIAL",
+  rating: (4.75 + (i % 5) * 0.05).toFixed(2),
+  reviews: `(${50 + i * 7})`,
+  name: mockNames[i],
+  location: locations[i],
+  specialization:
+    i % 2 === 0
+      ? "Freehold Villas, Agricultural Plots & Colonial Estates"
+      : "Beachfront Condominiums & Commercial Mixed-Use",
+  people: [{ initials: "AB" }, { initials: "CD" }],
+  personName: "Partner Agent " + (i + 1),
+  personRole: "Senior Broker & Conveyancer",
+  stats: [
+    { value: `${20 + i * 3}`, label: "Active Listings" },
+    { value: `$${10 + i * 2}M`, label: "Settled Vol." },
+    { value: "100%", label: "Title Clean" },
+  ],
+  badges: ["CEA Registered", "Escrow Secured", "Bilingual Contracts"],
+  cta: `View ${20 + i * 3} Listings`,
+}));
+
+export const allAgencies = [...agencies, ...generatedAgencies];
+export const PAGE_SIZE = 6;
